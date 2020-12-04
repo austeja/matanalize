@@ -6,7 +6,8 @@ namespace Matanalize
         {
         static void Main(string[] args)
             {
-            Console.WriteLine("Hello World!");
+            var t = new Taylor();
+            t.GetTaylor();
             }
         }
     }
