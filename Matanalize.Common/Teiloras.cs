@@ -3,11 +3,9 @@ using MathNet.Numerics;
 using MathNet.Numerics.Differentiation;
 
 namespace Matanalize.Common
-{
+    {
     public class Taylor
     {
-        public static Func<double, double> Function = x => Math.Pow(Math.E, x) * Math.Sin(x);
-
         public static string GetTaylor()
         {
             var polynomial_firstDerivative  = GetNthTaylorFormulaCoefficient(1);
@@ -30,7 +28,7 @@ namespace Matanalize.Common
         public static double GetNthOrderDerivativeValueAt0(int n)
             {
             var derivative = new NumericalDerivative(6, 0);
-            return derivative.EvaluateDerivative(Function, 0, n);
+            return derivative.EvaluateDerivative(Constants.Function, 0, n);
             }
 
         public static double GetNthTaylorFormulaCoefficient(int n)

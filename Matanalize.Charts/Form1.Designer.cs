@@ -5,8 +5,8 @@ using OxyPlot.Series;
 using OxyPlot.WindowsForms;
 using System.Windows.Forms;
 using System.Drawing;
-
 using Matanalize.Common;
+
 
 namespace Matanalize.Charts
     {
@@ -46,7 +46,7 @@ namespace Matanalize.Charts
 
             this.plot0 = new PlotView();
             InitializePlotProps(plot0, "a) y=(e^x) sin x", 0);
-            InitializePlotModel(plot0, Taylor.Function);
+            InitializePlotModel(plot0, Constants.Function);
             this.Controls.Add(this.plot0);
 
             this.plot1 = new PlotView();

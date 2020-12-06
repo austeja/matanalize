@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Lagranzas.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Matanalize.Common\Matanalize.Common.csproj" />
   </ItemGroup>
 
