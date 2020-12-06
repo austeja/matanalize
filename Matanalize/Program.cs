@@ -1,12 +1,9 @@
-using System;
 using Matanalize.Common;
 
 namespace Matanalize
     {
     class Program
         {
-        public static Func<double, double> function = x => Math.Pow(Math.E, x) * Math.Sin(x);
-
         static void Main(string[] args)
             {
             Taylor.GetTaylor();
