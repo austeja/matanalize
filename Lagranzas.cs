@@ -1,26 +1,19 @@
 using System;
+using MathNet.Numerics;
+using MathNet.Numerics.Differentiation;
 
 namespace Matanalize
 {
     class Lagrange
     {
-        public void iterate(Double fromInterval, Double toInterval)
+        public void getError(Double fromInterval, Double toInterval, int n)
         {
-            Double o = 1;
-            for(Double i = fromInterval; i <= toInterval; i+=toInterval)
-            {
-                Console.WriteLine("n={0}, {1}", o , calculateRemainder(i));
-                o++;
-            }
-            Console.WriteLine();
-        }
-    
-        public Double calculateRemainder(Double x)
-        {
-            Double e = Math.E;
-            Double y = Math.Pow(e, x) * Math.Sin(x);
+            var derivative = new NumericalDerivative((n+2), 0);
+            var M = derivative.EvaluateDerivative(Program.function, Math.Abs(fromInterval), n+1);
 
-            return y;
+            var R = (M * Math.Pow(Math.Abs(fromInterval) - 0, n + 1)) / SpecialFunctions.Factorial(n + 1);
+            
+            Console.WriteLine("Kai x priklauso intervalui [{0}, {1}], tai R{2}={3}", fromInterval, toInterval, n, R);
         }
     }
 }
