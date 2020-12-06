@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matanalize", "Matanalize.csproj", "{517215B5-0551-4DE5-B1B8-E668D882ED1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matanalize", "Matanalize\Matanalize.csproj", "{517215B5-0551-4DE5-B1B8-E668D882ED1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matanalize.Charts", "Matanalize.Charts\Matanalize.Charts.csproj", "{B37CDBF5-4BB8-48A5-B9D6-92F24CAB18C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matanalize.Common", "Matanalize.Common\Matanalize.Common.csproj", "{FC048F30-BE5A-4DB0-861F-DB064D38EC7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{517215B5-0551-4DE5-B1B8-E668D882ED1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{517215B5-0551-4DE5-B1B8-E668D882ED1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{517215B5-0551-4DE5-B1B8-E668D882ED1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37CDBF5-4BB8-48A5-B9D6-92F24CAB18C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37CDBF5-4BB8-48A5-B9D6-92F24CAB18C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37CDBF5-4BB8-48A5-B9D6-92F24CAB18C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37CDBF5-4BB8-48A5-B9D6-92F24CAB18C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC048F30-BE5A-4DB0-861F-DB064D38EC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC048F30-BE5A-4DB0-861F-DB064D38EC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC048F30-BE5A-4DB0-861F-DB064D38EC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC048F30-BE5A-4DB0-861F-DB064D38EC7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

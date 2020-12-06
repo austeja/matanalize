@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Matanalize.Common;
 
 namespace Matanalize
     {
@@ -6,8 +6,7 @@ namespace Matanalize
         {
         static void Main(string[] args)
             {
-            var t = new Taylor();
-            t.GetTaylor();
+            Taylor.GetTaylor();
             }
         }
     }
