@@ -20,8 +20,8 @@ namespace Matanalize.Charts
         private PlotView plot5;
         private PlotView plot6;
 
-        private int _intervalStart = -5;
-        private int _intervalEnd = 5;
+        private int _intervalStart = -50;
+        private int _intervalEnd = 50;
 
         private IContainer components = null;
 
@@ -39,6 +39,8 @@ namespace Matanalize.Charts
 
         private void InitializeComponent()
             {
+            this.BackColor = Color.White;
+
             this.components = new Container();
             this.AutoScaleMode = AutoScaleMode.Font;
             this.ClientSize = new Size(800, 450);
@@ -95,6 +97,7 @@ namespace Matanalize.Charts
             plot.Name = funcName;
             plot.PanCursor = Cursors.Hand;
             plot.Size = new Size(484, 312);
+            plot.BackColor = Color.White;
             plot.ZoomHorizontalCursor = Cursors.SizeWE;
             plot.ZoomRectangleCursor = Cursors.SizeNWSE;
             plot.ZoomVerticalCursor = Cursors.SizeNS;
@@ -103,7 +106,7 @@ namespace Matanalize.Charts
         private void InitializePlotModel(PlotView plot, Func<double, double> func)
             {
             var model = new PlotModel { Title = plot.Name };
-            model.Series.Add(new FunctionSeries(func, _intervalStart, _intervalEnd, 0.01));
+            model.Series.Add(new FunctionSeries(func, _intervalStart, _intervalEnd, 0.1));
             plot.Model = model;
             }
 
