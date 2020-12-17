@@ -1,28 +1,26 @@
 using System;
 using MathNet.Numerics;
 using MathNet.Numerics.Differentiation;
+using MathNet.Symbolics;
 
 namespace Matanalize.Common
     {
     public class Taylor
     {
-        public static string GetTaylor()
+        public static SymbolicExpression GetTaylor(int k, SymbolicExpression symbol, SymbolicExpression a, SymbolicExpression x)
         {
-            var polynomial_firstDerivative  = GetNthTaylorFormulaCoefficient(1);
-            var polynomial_secondDerivative = GetNthTaylorFormulaCoefficient(2);
-            var polynomial_thirdDerivative  = GetNthTaylorFormulaCoefficient(3);
-            var polynomial_fourthDerivative = GetNthTaylorFormulaCoefficient(4);
-            var polynomial_fifthDerivative  = GetNthTaylorFormulaCoefficient(5);
+            int factorial = 1;
+            SymbolicExpression accumulator = SymbolicExpression.Zero;
+            SymbolicExpression derivative = x;
+            for (int i = 0; i < k; i++)
+            {
+                var subs = derivative.Substitute(symbol, a);
+                derivative = derivative.Differentiate(symbol);
+                accumulator = accumulator.Add(subs / factorial * (symbol.Subtract(a)).Pow(i));
+                factorial *= (i + 1);
+            }
 
-            var first = polynomial_firstDerivative != 0 ? (polynomial_firstDerivative == 1 ? "x" : $"({polynomial_firstDerivative})x") : "";
-            var sec = polynomial_secondDerivative != 0 ? (polynomial_secondDerivative == 1 ? " + x^2" : $" + ({polynomial_secondDerivative})x^2") : "";
-            var third = polynomial_thirdDerivative != 0 ? (polynomial_thirdDerivative == 1 ? " + x^3" : $" + ({polynomial_thirdDerivative})x^3") : "";
-            var fourth = polynomial_fourthDerivative != 0 ? (polynomial_fourthDerivative == 1 ? " + x^4" : $" + ({polynomial_fourthDerivative})x^4") : "";
-            var fifth = polynomial_fifthDerivative != 0 ? (polynomial_fifthDerivative == 1 ? " + x^5" : $" + ({polynomial_fifthDerivative})x^5") : "";
-            
-            Console.WriteLine(first + sec + third + fourth + fifth);
-
-            return first + sec + third + fourth + fifth;
+            return accumulator.Expand();
         }
 
         public static double GetNthOrderDerivativeValueAt0(int n)
