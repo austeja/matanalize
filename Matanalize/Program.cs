@@ -1,4 +1,6 @@
+using System;
 using Matanalize.Common;
+using MathNet.Symbolics;
 
 namespace Matanalize
     {
@@ -6,7 +8,12 @@ namespace Matanalize
         {
         static void Main(string[] args)
             {
-            Taylor.GetTaylor();
+                var x = SymbolicExpression.Variable("x");
+                Console.WriteLine(Taylor.GetTaylor(6, 
+                    x, 
+                    0, 
+                    SymbolicExpression.E.Pow(x).Multiply(x.Sin())
+                ));
 
             //---------
             // 2. Užrašykite liekamąjį narį.

@@ -13,4 +13,8 @@
     <ProjectReference Include="..\Matanalize.Common\Matanalize.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MathNet.Symbolics" Version="0.22.0" />
+  </ItemGroup>
+
 </Project>
